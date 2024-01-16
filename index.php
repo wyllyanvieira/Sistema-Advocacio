@@ -40,9 +40,27 @@
                 <div class="row g-3">
                 <div class="col-sm-6">
                   <label for="estadocivil" class="form-label">Estado Civil</label>
-                  <input type="text" class="form-control" name="estadocivil" placeholder="" value="" required="">
-                  <div class="invalid-feedback">
-                    Valid first name is required.
+                  <p></p>
+                  <label for="casado">
+                      <input type="radio" id="casado" name="estadoCivil" value="casado" onclick="mostrarCampo()"> Casado
+                  </label>
+
+                  <label for="solteiro">
+                      <input type="radio" id="solteiro" name="estadoCivil" value="solteiro" onclick="mostrarCampo()"> Solteiro
+                  </label>
+
+                  <label for="viuvo">
+                      <input type="radio" id="viuvo" name="estadoCivil" value="viuvo" onclick="mostrarCampo()"> Viúvo
+                  </label>
+
+                  <label for="divorciado">
+                      <input type="radio" id="divorciado" name="estadoCivil" value="divorciado" onclick="mostrarCampo()"> Divorciado
+                  </label>
+
+                  <div id="campoExtra" style="display:none;">
+                      <label for="campoInput">Nome do conje:
+                          <input type="text" id="campoInput" class="form-control" name="conjuge" placeholder="" value="" required="">
+                      </label>
                   </div>
                 </div>
 
@@ -179,7 +197,20 @@
           </footer>
     </div>
 </body>
-    <script></script>
+<script>
+        function mostrarCampo() {
+            var campoExtra = document.getElementById("campoExtra");
+            var campoInput = document.getElementById("campoInput");
+
+            if (document.getElementById("casado").checked || document.getElementById("divorciado").checked) {
+                campoExtra.style.display = "block";
+                campoInput.required = true;
+            } else {
+                campoExtra.style.display = "none";
+                campoInput.required = false;
+            }
+        }
+    </script>
 </html>
 
 

@@ -8,7 +8,14 @@ use PhpOffice\PhpWord\TemplateProcessor;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtém os dados do formulário
     $nome = $_POST["name"];
-    $estadocivil = $_POST["estadocivil"];
+    $estadoCivil = isset($_POST["estadoCivil"]) ? $_POST["estadoCivil"] : "";
+    $conjuge = isset($_POST["conjuge"]) ? $_POST["conjuge"] : "";
+
+    if ($estadoCivil == "casado") {
+        $mensagem = "Casado com $conjuge";
+    } else {
+        $mensagem = $estadoCivil;
+    }
     $profissao = $_POST["profissao"];
     $identidade = $_POST["identidade"];
     $orgaoemissor = $_POST["orgaoemissor"];
@@ -28,6 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($email == NULL) {
         $email = "Não Possue";
     }
+     
 
     // Carrega o modelo do documento do Word
     $templatePath = 'arquivos/modelos/proadj.docx';
@@ -35,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Substitui os marcadores no modelo pelos dados do formulário
     $templateProcessor->setValue('NOME', $nome);
-    $templateProcessor->setValue('ESTADOCIVIL', $estadocivil);
+    $templateProcessor->setValue('ESTADOCIVIL', $mensagem);
     $templateProcessor->setValue('PROFISSAO', $profissao);
     $templateProcessor->setValue('IDENTIDADE', $identidade);
     $templateProcessor->setValue('ORGAOEMISSOR', $orgaoemissor);
@@ -51,19 +59,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $templateProcessor->setValue('PONTOFINAL', $pfinal);
     $templateProcessor->setValue('VALORSERIVICO', $vservico);
     $templateProcessor->setValue('FPAGAMENTO', $fpagamento);
-
+    
 
     // Gera um nome único para o novo documento
     $outputFileName = 'proc_' . strtolower(str_replace(' ', '_', $nome)) . '.docx';
     $outputPath = 'arquivos/downloads/' . $outputFileName;
-
-    // Salva o novo documento gerado
     $templateProcessor->saveAs($outputPath);
-    echo "var downloadToast = new bootstrap.Toast(document.getElementById('downloadToast'));";
-    echo "downloadToast.show();";
 
+// Verifica se o arquivo existe
+if (file_exists($outputPath)) {
+    // Define os cabeçalhos para download
+    header('Content-Description: File Transfer');
+    header('Content-Type: application/octet-stream');
+    header('Content-Disposition: attachment; filename="' . basename($outputPath) . '"');
+    header('Expires: 0');
+    header('Cache-Control: must-revalidate');
+    header('Pragma: public');
+    header('Content-Length: ' . filesize($outputPath));
 
-    header('Location: http://localhost/advocateSys/arquivos/downloads/'. $outputFileName .'');
-    exit;
+    // Lê e exibe o arquivo
+    readfile($outputPath);
+    
+        } else {
+            // Se o arquivo não existir, redirecione ou exiba uma mensagem de erro
+            echo "Arquivo não encontrado.";
+            // ou redirecione para uma página de erro
+            // header("Location: pagina_de_erro.php");
+            exit;
+        }
+     exit;
 }
 ?>
