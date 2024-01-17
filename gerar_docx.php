@@ -6,6 +6,20 @@ use PhpOffice\PhpWord\TemplateProcessor;
 
 // Verifica se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Conectar ao banco de dados (substitua os valores conforme necessário)
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "sistema";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Verificar a conexão
+    if ($conn->connect_error) {
+        die("Falha na conexão com o banco de dados: " . $conn->connect_error);
+    }
+
+
     // Obtém os dados do formulário
     $nome = $_POST["name"];
     $estadoCivil = isset($_POST["estadoCivil"]) ? $_POST["estadoCivil"] : "";
@@ -36,6 +50,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email = "Não Possue";
     }
      
+    // Instrução SQL de inserção
+    $sql = "INSERT INTO sua_tabela (nome, estadoCivil, conjuge, mensagem, profissao, identidade, orgaoemissor, CPF, namep, namem, datanascimento, cidadadenatal, endereco, telefone, sc, pfinal, email, fpagamento, vservico) VALUES ('$nome', '$estadoCivil', '$conjuge', '$mensagem', '$profissao', '$identidade', '$orgaoemissor', '$CPF', '$namep', '$namem', '$datanascimento', '$cidadadenatal', '$endereco', '$telefone', '$sc', '$pfinal', '$email', '$fpagamento', '$vservico')";
 
     // Carrega o modelo do documento do Word
     $templatePath = 'arquivos/modelos/proadj.docx';
