@@ -22,7 +22,7 @@
             <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" >Cadastrar Cliente</a>
+            <a class="nav-link" href="gerarprocuracao.php" >Cadastrar Cliente</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Controle Financeiro</a>
