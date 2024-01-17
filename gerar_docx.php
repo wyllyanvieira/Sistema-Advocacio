@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
      
     // Instrução SQL de inserção
-    $sql = "INSERT INTO sua_tabela (nome, estadoCivil, conjuge, mensagem, profissao, identidade, orgaoemissor, CPF, namep, namem, datanascimento, cidadadenatal, endereco, telefone, sc, pfinal, email, fpagamento, vservico) VALUES ('$nome', '$estadoCivil', '$conjuge', '$mensagem', '$profissao', '$identidade', '$orgaoemissor', '$CPF', '$namep', '$namem', '$datanascimento', '$cidadadenatal', '$endereco', '$telefone', '$sc', '$pfinal', '$email', '$fpagamento', '$vservico')";
+    $sql = "INSERT INTO clientes (nome, estadoCivil, conjuge, mensagem, profissao, identidade, orgaoemissor, CPF, namep, namem, datanascimento, cidadadenatal, endereco, telefone, sc, pfinal, email, fpagamento, vservico) VALUES ('$nome', '$estadoCivil', '$conjuge', '$mensagem', '$profissao', '$identidade', '$orgaoemissor', '$CPF', '$namep', '$namem', '$datanascimento', '$cidadadenatal', '$endereco', '$telefone', '$sc', '$pfinal', '$email', '$fpagamento', '$vservico')";
 
     // Carrega o modelo do documento do Word
     $templatePath = 'arquivos/modelos/proadj.docx';
@@ -81,7 +81,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $outputFileName = 'proc_' . strtolower(str_replace(' ', '_', $nome)) . '.docx';
     $outputPath = 'arquivos/downloads/' . $outputFileName;
     $templateProcessor->saveAs($outputPath);
-
+    // Executar a instrução SQL
+if ($conn->query($sql) === TRUE) {
+    echo "Dados inseridos com sucesso!";
+} else {
+    echo "Erro ao inserir dados: " . $conn->error;
+}
 // Verifica se o arquivo existe
 if (file_exists($outputPath)) {
     // Define os cabeçalhos para download
