@@ -36,8 +36,8 @@
             Controle Financeiro
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="gerarfinanceiro.php">Cadastrar pessoa ao financeiro</a></li>
-            <li><a class="dropdown-item" href="backend/display_with_payment.php">Controle Financeiro</a></li>
+            <li><a class="dropdown-item" href="../gerarfinanceiro.php">Cadastrar pessoa ao financeiro</a></li>
+            <li><a class="dropdown-item" href="display_with_payment.php">Controle Financeiro</a></li>
           </ul>
         </li>
           <li class="nav-item">
