@@ -20,14 +20,27 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
           </li>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Cadastrar Cliente
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">PROCURAÇÃO DECLARAÇÃO RENUNCIA E CONTRATO - INDIVIDUAL</a></li>
+            <li><a class="dropdown-item" href="#">PROCURAÇÃO DECLARAÇÃO RENUNCIA E CONTRATO - FILHO REPRESENTADO PELO GENITOR</a></li>
+            <li><a class="dropdown-item" href="#">PROCURAÇÃO DECLARAÇÃO RENUNCIA E CONTRATO - COM COUNJE</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Controle Financeiro
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="gerarfinanceiro.php">Cadastrar pessoa ao financeiro</a></li>
+            <li><a class="dropdown-item" href="backend/display_with_payment.php">Controle Financeiro</a></li>
+          </ul>
+        </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" >Gerar Procuração</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Gerar Recibo</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Verificar Clientes</a>
+            <a class="nav-link" href="#">Controle Clientes</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Gerenciamento de Equipe</a>
@@ -46,7 +59,7 @@
 
         <div class="col container">
             <h4 class="mb-3">Dados do Cliente</h4>
-            <form  method="post" action="gerar_docx.php" >
+            <form  method="post" action="backend/gerar_docx.php" >
                 <div class="row g-3">
                     <div class="col">
                         <label for="name" class="form-label">Nome Completo</label>

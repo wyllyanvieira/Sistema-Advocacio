@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sistema Advocaticio - Inicio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
@@ -21,12 +21,25 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="index.php">Inicio</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="gerarprocuracao.php" >Cadastrar Cliente</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Controle Financeiro</a>
-          </li>
+          <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Cadastrar Cliente
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">PROCURAÇÃO DECLARAÇÃO RENUNCIA E CONTRATO - INDIVIDUAL</a></li>
+            <li><a class="dropdown-item" href="#">PROCURAÇÃO DECLARAÇÃO RENUNCIA E CONTRATO - FILHO REPRESENTADO PELO GENITOR</a></li>
+            <li><a class="dropdown-item" href="#">PROCURAÇÃO DECLARAÇÃO RENUNCIA E CONTRATO - COM COUNJE</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Controle Financeiro
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="gerarfinanceiro.php">Cadastrar pessoa ao financeiro</a></li>
+            <li><a class="dropdown-item" href="backend/display_with_payment.php">Controle Financeiro</a></li>
+          </ul>
+        </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Controle Clientes</a>
           </li>
