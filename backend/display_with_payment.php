@@ -6,7 +6,7 @@
     <title>Clientes Cadastrados</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Ninth navbar example">
@@ -73,7 +73,7 @@
 
     if ($result->num_rows > 0) {
         echo '<table class="table table-bordered">';
-        echo '<thead class="thead-dark"><tr><th>ID</th><th>Nome</th><th>Valor</th><th>A Dever</th><th>Parcelas</th><th>Parcelas Pagas</th><th>Ação</th></tr></thead>';
+        echo '<thead class="thead-dark"><tr><th>N. Contrato</th><th>Nome</th><th>Valor</th><th>A Dever</th><th>Parcelas</th><th>Parcelas Pagas</th><th>Ação</th></tr></thead>';
         echo '<tbody>';
         while ($row = $result->fetch_assoc()) {
             echo '<tr>';
@@ -84,7 +84,9 @@
             echo '<td>' . $row['parcelas'] . '</td>';
             echo '<td>' . $row['pagas'] . '</td>';
             echo '<td>';
-            echo '<a href="../add_payment_form.php?id=' . $row['id'] . '" class="btn btn-primary btn-sm">Adicionar Pagamento</a>';
+            echo '<a href="../add_payment_form.php?id=' . $row['id'] . '" class="btn btn-outline-success btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Adicionar Pagamento Recebido"><i class="bi bi-plus-lg"></i></a>';
+            echo '<a href="../editfinanceiro.php?id=' . $row['id'] . '" class="btn btn-outline-warning btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar Dados financeiros"><i class="bi bi-info-lg"></i></a>';
+            echo '<a href="../removefinanceiro.php?id=' . $row['id'] . '" class="btn btn-outline-danger btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Remover Dados ( SOEMNTE QUANDO NAO SE DEVE MAIS NADA )"><i class="bi bi-x-lg"></i></a>';
             echo '</td>';
             echo '</tr>';
         }
