@@ -37,9 +37,22 @@ CREATE TABLE IF NOT EXISTS `clientes` (
   `fpagamento` varchar(50) NOT NULL,
   `vservico` decimal(10,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela sistema.clientes: ~0 rows (aproximadamente)
+-- Exportação de dados foi desmarcado.
+
+-- Copiando estrutura para tabela sistema.financeiro
+CREATE TABLE IF NOT EXISTS `financeiro` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) NOT NULL,
+  `valor` decimal(10,2) NOT NULL,
+  `dever` decimal(10,2) NOT NULL,
+  `parcelas` int(11) NOT NULL,
+  `pagas` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Exportação de dados foi desmarcado.
 
 -- Copiando estrutura para tabela sistema.usuarios
 CREATE TABLE IF NOT EXISTS `usuarios` (
@@ -47,9 +60,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `password` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Copiando dados para a tabela sistema.usuarios: ~0 rows (aproximadamente)
-INSERT INTO `usuarios` (`username`, `password`) VALUES
-	('wyllyam', 'wyllyam');
+-- Exportação de dados foi desmarcado.
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
