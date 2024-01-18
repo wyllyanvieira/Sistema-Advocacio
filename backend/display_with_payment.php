@@ -86,7 +86,11 @@
             echo '<td>';
             echo '<a href="../add_payment_form.php?id=' . $row['id'] . '" class="btn btn-outline-success btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Adicionar Pagamento Recebido"><i class="bi bi-plus-lg"></i></a>';
             echo '<a href="../editfinanceiro.php?id=' . $row['id'] . '" class="btn btn-outline-warning btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Editar Dados financeiros"><i class="bi bi-info-lg"></i></a>';
-            echo '<a href="../removefinanceiro.php?id=' . $row['id'] . '" class="btn btn-outline-danger btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Remover Dados ( SOEMNTE QUANDO NAO SE DEVE MAIS NADA )"><i class="bi bi-x-lg"></i></a>';
+            // Adiciona o botão de exclusão
+            if ($row['dever'] == 0) {
+                echo '<a href="delete_entry.php?id=' . $row['id'] . '" class="btn btn-outline-danger btn-sm" data-bs-toggle="tooltip" data-bs-placement="top" title="Remover Dados ( SOEMNTE QUANDO NAO SE DEVE MAIS NADA )"><i class="bi bi-x-lg"></i></a>';
+            }
+            
             echo '</td>';
             echo '</tr>';
         }
