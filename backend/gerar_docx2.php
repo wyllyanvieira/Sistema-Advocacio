@@ -46,6 +46,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fpagamento = $_POST["fpagamento"]; 
     $vservico = $_POST["vservico"]; 
 
+    $nomec = $_POST["nomec"];
+    $datac = $_POST["datac"]; 
+    $cidadec = $_POST["cidadec"]; 
+    $orgaoemissorc = $_POST["orgaoemissorc"]; 
+    $rgc = $_POST["rgc"]; 
+    $cpfc = $_POST["cpfc"]; 
+
     if ($email == NULL) {
         $email = "Não Possue";
     }
@@ -54,11 +61,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO clientes (nome, estadoCivil, conjuge, mensagem, profissao, identidade, orgaoemissor, CPF, namep, namem, datanascimento, cidadadenatal, endereco, telefone, sc, pfinal, email, fpagamento, vservico) VALUES ('$nome', '$estadoCivil', '$conjuge', '$mensagem', '$profissao', '$identidade', '$orgaoemissor', '$CPF', '$namep', '$namem', '$datanascimento', '$cidadadenatal', '$endereco', '$telefone', '$sc', '$pfinal', '$email', '$fpagamento', '$vservico')";
 
     // Carrega o modelo do documento do Word
-    $templatePath = '../arquivos/modelos/proadj.docx';
+    $templatePath = '../arquivos/modelos/proadj2.docx';
     $templateProcessor = new TemplateProcessor($templatePath);
 
     // Substitui os marcadores no modelo pelos dados do formulário
-    $templateProcessor->setValue('NOME', $nome);
+    $templateProcessor->setValue('NOMEC', $nomec);
+    $templateProcessor->setValue('DATANASCIMENTOC', $datac);
+    $templateProcessor->setValue('CIDADENATALC', $cidadec);
+    $templateProcessor->setValue('COUNJE', $conjuge);
+    $templateProcessor->setValue('RGC', $rgc);
+    $templateProcessor->setValue('ORGAOEMISSORC', $orgaoemissorc);
+    $templateProcessor->setValue('CPFC', $cpfc);
+
+    
+    $templateProcessor->setValue('NOME', $name);
     $templateProcessor->setValue('ESTADOCIVIL', $mensagem);
     $templateProcessor->setValue('PROFISSAO', $profissao);
     $templateProcessor->setValue('IDENTIDADE', $identidade);

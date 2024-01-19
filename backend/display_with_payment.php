@@ -26,9 +26,8 @@
             Cadastrar Cliente
           </a>
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">PROCURAÇÃO DECLARAÇÃO RENUNCIA E CONTRATO - INDIVIDUAL</a></li>
-            <li><a class="dropdown-item" href="#">PROCURAÇÃO DECLARAÇÃO RENUNCIA E CONTRATO - FILHO REPRESENTADO PELO GENITOR</a></li>
-            <li><a class="dropdown-item" href="#">PROCURAÇÃO DECLARAÇÃO RENUNCIA E CONTRATO - COM COUNJE</a></li>
+            <li><a class="dropdown-item" href="gerarprocuracao.php">PROCURAÇÃO DECLARAÇÃO RENUNCIA E CONTRATO - INDIVIDUAL</a></li>
+            <li><a class="dropdown-item" href="gerarprocuracao2.php">PROCURAÇÃO DECLARAÇÃO RENUNCIA E CONTRATO - FILHO REPRESENTADO PELO GENITOR</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">

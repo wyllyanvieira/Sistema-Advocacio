@@ -58,7 +58,7 @@
 
         <div class="col container">
             <h4 class="mb-3">Dados do Cliente</h4>
-            <form  method="post" action="backend/gerar_docx.php" >
+            <form  method="post" action="backend/gerar_docx2.php" >
                 <div class="row g-3">
                     <div class="col">
                         <label for="name" class="form-label">Nome Completo</label>
@@ -208,6 +208,50 @@
                 <div class="col-sm-6">
                   <label for="fpagamento" class="form-label">Forma de Pagamento</label>
                   <input type="text" class="form-control" name="fpagamento" placeholder="" value="" required="">
+                  <div class="invalid-feedback">
+                    Valid last name is required.
+                  </div>
+                </div>
+                <h4 class="mb-3">Dados do menor</h4>
+
+                <div class="col-sm-6">
+                  <label for="nomec" class="form-label">Nome do menor</label>
+                  <input type="text" class="form-control" name="nomec" placeholder="" value="" required="">
+                  <div class="invalid-feedback">
+                    Valid last name is required.
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <label for="datac" class="form-label">Data de Nascimento</label>
+                  <input type="text" class="form-control" name="datac" placeholder="" value="" required="">
+                  <div class="invalid-feedback">
+                    Valid last name is required.
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <label for="cpfc" class="form-label">CPF da menor</label>
+                  <input type="text" class="form-control" name="cpfc" placeholder="" value="" required="">
+                  <div class="invalid-feedback">
+                    Valid last name is required.
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <label for="rgc" class="form-label">RG do menor</label>
+                  <input type="text" class="form-control" name="rgc" placeholder="" value="" required="">
+                  <div class="invalid-feedback">
+                    Valid last name is required.
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <label for="orgaoemissorc" class="form-label">Orgão Emissor</label>
+                  <input type="text" class="form-control" name="orgaoemissorc" placeholder="" value="" required="">
+                  <div class="invalid-feedback">
+                    Valid last name is required.
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <label for="cidadec" class="form-label">Cidade Natal</label>
+                  <input type="text" class="form-control" name="cidadec" placeholder="" value="" required="">
                   <div class="invalid-feedback">
                     Valid last name is required.
                   </div>
