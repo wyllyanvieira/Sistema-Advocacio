@@ -223,7 +223,7 @@
                 </div>
                 <div class="col-sm-6">
                   <label for="datac" class="form-label">Data de Nascimento</label>
-                  <input type="text" class="form-control" name="datac" placeholder="" value="" required="">
+                  <input type="date" class="form-control" name="datanascimento" placeholder="Insira em formato de Data dd/mm/aaaa" required="">
                   <div class="invalid-feedback">
                     Valid last name is required.
                   </div>
