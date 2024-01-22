@@ -40,10 +40,10 @@
           </ul>
         </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Controle Clientes</a>
+            <a class="nav-link" href="#">Controle Clientes (EM DESENVOLVIMENTO)</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Gerenciamento de Equipe</a>
+            <a class="nav-link" href="#">Gerenciamento de Equipe (EM DESENVOLVIMENTO)</a>
           </li>
         </ul>
       </div>

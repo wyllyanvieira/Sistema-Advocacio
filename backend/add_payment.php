@@ -53,6 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "Cliente não encontrado.";
     }
+    
 }
 $conn->close();
 ?>

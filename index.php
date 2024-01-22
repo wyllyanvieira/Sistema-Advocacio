@@ -40,15 +40,30 @@
           </ul>
         </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Controle Clientes</a>
+            <a class="nav-link" href="#">Controle Clientes (EM DESENVOLVIMENTO)</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Gerenciamento de Equipe</a>
+            <a class="nav-link" href="#">Gerenciamento de Equipe (EM DESENVOLVIMENTO)</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+  <div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+        <img src="arquivos/img/undraw_loginart.svg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold lh-1 mb-3">Bem-Vindo(a) ao Sistema Advocaticio</h1>
+        <p class="lead">Nesse sistema voce tem a facilidade de realizar cobranças e emitir contratos e muito mais</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <button type="button" class="btn btn-primary btn-lg px-4 me-md-2" href="backend/display_with_payment.php" >Ir ao Financeiro</button>
+          <button type="button" class="btn btn-outline-secondary btn-lg px-4" href="gerarprocuracao.php">Ir a Procuração</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
 
