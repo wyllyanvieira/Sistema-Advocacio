@@ -27,6 +27,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="gerarprocuracao.php">PROCURAÇÃO DECLARAÇÃO RENUNCIA E CONTRATO - INDIVIDUAL</a></li>
             <li><a class="dropdown-item" href="gerarprocuracao2.php">PROCURAÇÃO DECLARAÇÃO RENUNCIA E CONTRATO - FILHO REPRESENTADO PELO GENITOR</a></li>
+<li><a class="dropdown-item" href="gerarprocuracao3.php">PROCURAÇÃO DECLARAÇÃO RENUNCIA E CONTRATO - INDIVIDUAL ROGO</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -42,7 +43,7 @@
             <a class="nav-link" href="#">Controle Clientes (EM DESENVOLVIMENTO)</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Gerenciamento de Equipe (EM DESENVOLVIMENTO)</a>
+            <a class="nav-link" href="backend/senhasinss.php">Gerenciamento de Senhas INSS</a>
           </li>
         </ul>
       </div>
@@ -176,7 +177,7 @@
 
                 <div class="col">
                         <label for="email" class="form-label">Endereço Eletrônico</label>
-                        <input type="email" class="form-control" name="email" placeholder="Digite o email " required="">
+                        <input type="text" class="form-control" name="email" placeholder="Digite o email " required="">
                         <div class="invalid-feedback">
                             Por favor, revise as informações e tente novamente.
                         </div>

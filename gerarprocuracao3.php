@@ -59,7 +59,7 @@
 
         <div class="col container">
             <h4 class="mb-3">Dados do Cliente</h4>
-            <form  method="post" action="backend/gerar_docx.php" >
+            <form  method="post" action="backend/gerar_docx3.php" >
                 <div class="row g-3">
                     <div class="col">
                         <label for="name" class="form-label">Nome Completo</label>
